@@ -1,0 +1,11 @@
+<div class="content d-flex flex-column align-items-center ">
+    @if(step === 0) {
+        <app-validate></app-validate>
+    } @else if(step === 1) {
+        <app-about></app-about>
+    } @else if(step === 2) {
+       <app-company></app-company>
+    } @else if(step === 3) {
+       <app-team></app-team>
+    }
+</div>

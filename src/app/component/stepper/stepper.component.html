@@ -1,0 +1,29 @@
+<aside class="d-flex flex-column  align-items-start">
+        <div class="main-logo">
+            <img src="assets/images/svg/logo.svg" alt="logo">
+        </div>
+       <div class="content d-flex flex-column ">
+         <div>
+            <h1 class="text text-heading">Get started</h1>
+        </div>
+        <div class="stepper">
+            <ul class="stepper-list d-flex flex-column ">
+                   @for(step of steps; track $index){
+                     <li class="d-flex aling-items-center gap-4"
+                        [class.active]="$index === currentStep"
+                        (click)="goToStep($index)"
+                     >
+                        <div class="stepper-img">
+                             <img [src]="getICon(currentStep , $index)" alt="StepperIcon" class="img-fluid">
+                        </div>
+                        <span class="text text-span">
+                            {{step.label}}
+                        </span>
+                    </li>
+                   }      
+            </ul>
+        </div>
+       </div>
+</aside> 
+
+

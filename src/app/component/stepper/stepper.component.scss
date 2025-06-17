@@ -1,0 +1,32 @@
+aside{
+    gap:3.5rem ;
+    background-color: var(--primary);
+    max-width:350px ;
+    min-height: 100vh;
+    padding: 3.5rem 2.5rem;
+    border-radius: 1.5rem;
+    .content{
+        gap: 3rem;
+    }
+    .stepper{
+        .stepper-list{
+            gap: 2rem;
+        }
+        .stepper-img{
+            inline-size:25px ;
+            block-size: 25px;
+            position: relative;
+            &::after{
+                content: "";
+                position: absolute;
+                inline-size: 2px;
+                block-size: 26px;
+                border-radius: 1px;
+                background-color: var(--neutral-100);
+                transform: translateX(-13px);
+                bottom: -31px;
+            }
+        }
+
+    }
+}

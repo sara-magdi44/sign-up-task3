@@ -1,0 +1,24 @@
+.text{
+    color: var(--neutral-100);
+    text-transform: capitalize;
+    &.text-heading{
+        font-size: 36px;
+        font-family: "NunitoSans-Bold";
+    }
+    &.text-span{
+        font-size: 18px;
+        font-family: "NunitoSans-SemiBold";
+    }
+
+}
+.step{
+    font-family: "NunitoSans-Bold";
+    span{
+        color: var(--primary);
+        font-size: 14px;
+    }
+    h2{
+        color: var(--neutral-500);
+        font-size: 22px;
+    }
+}
