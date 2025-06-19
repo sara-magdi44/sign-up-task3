@@ -1,22 +1,14 @@
-import { Component, signal  } from '@angular/core';
-import { StepperComponent } from './component/stepper/stepper.component';
-import { ContentComponent } from './component/content/content.component';
-
-import { CommonModule } from '@angular/common';
+import { Component  } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
-  imports: [
-    StepperComponent,
-    ContentComponent,
-    CommonModule
-  ],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent{
+
   title = 'signup';
-  currentStep = signal(0);
-  onStepChange(newStep: number) {
-    this.currentStep.set(newStep);
-  }
+
+
 }

@@ -1,1 +1,55 @@
-<p>company works!</p>
+<div class="section">
+    <div class="step mb-4">
+        <span class="text-primary">STEP 3/4</span>
+        <h2 class="mt-2">Tell about your company</h2>
+    </div>
+    
+    <form action="post" class="form d-flex flex-column ">
+        <div class="form-group">
+            <label for="companyName" class="form-label label">Your Company's Name</label>
+            <input 
+                type="text" 
+                class="form-control input" 
+                id="companyName" 
+                placeholder="Company's Name"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="businessDirection" class="form-label label">Business Direction</label>
+            <select class="form-select select " id="businessDirection">
+                <option selected>IT and programming</option>
+                <option value="1">Industrial services</option>
+                <option value="2">Software Services</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+  <label class="form-label label">How many people in your team?</label>
+  <div class="d-flex gap-3 flex-wrap">
+    
+    <div class="form-check radio-check">
+      <input type="radio" name="team" class="form-check-input" id="only-me">
+      <label class="form-radio-label label-cehckbox" for="only-me">Only me</label>
+    </div>
+    
+    <div class="form-check radio-check ">
+      <input type="radio" name="team" class="form-check-input" id="10-15">
+      <label class="form-radio-label label-cehckbox" for="10-15">10-15</label>
+    </div>
+    
+    <div class="form-check radio-check">
+      <input type="radio" name="team" class="form-check-input" id="20-40">
+      <label class="form-radio-label label-cehckbox" for="20-40">20-40</label>
+    </div>
+    
+    <div class="form-check radio-check">
+      <input type="radio" name="team" class="form-check-input" id="50-100">
+      <label class="form-radio-label label-cehckbox" for="50-100">50-100</label>
+    </div>
+
+  </div>
+</div>
+
+    </form>
+</div>

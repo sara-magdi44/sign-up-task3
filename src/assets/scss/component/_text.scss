@@ -6,13 +6,21 @@
         font-family: "NunitoSans-Bold";
     }
     &.text-span{
-        font-size: 18px;
+       font-size: clamp(0.875rem, 0.8036rem + 0.3571vw, 1.125rem);
         font-family: "NunitoSans-SemiBold";
+    }
+    &.text-link{
+        font-size: 16px;
+        font-family: "NunitoSans-SemiBold";
+        color: var(--primary);
+        
     }
 
 }
 .step{
     font-family: "NunitoSans-Bold";
+    text-align: center;
+    padding: 1rem 0 ;
     span{
         color: var(--primary);
         font-size: 14px;

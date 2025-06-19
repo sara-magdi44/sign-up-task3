@@ -1,29 +1,65 @@
-<aside class="d-flex flex-column  align-items-start">
-        <div class="main-logo">
-            <img src="assets/images/svg/logo.svg" alt="logo">
+<div class="content-container gap-4 justify-content-center d-flex flex-wrap">
+  <aside class="d-flex flex-column align-items-lg-start align-items-center">
+   <div class="side-content d-flex flex-lg-column gap-md-4 ">
+     <div class="main-logo">
+      <img src="assets/images/svg/logo.svg" alt="logo" class="img-fluid">
+    </div>
+    <h1 class="text text-heading">Get started</h1>
+    
+   </div>
+    <div class="stepper d-flex flex-row flex-lg-column ">
+      @for(step of steps; track $index) {
+        <div class="step-vertical" [style.--steps-count]="steps.length"
+             [class.complete]="$index < currentStep()"
+             [class.active]="$index === currentStep()"
+             [class.inactive]="$index > currentStep()"
+             (click)="goToStep($index)">
+          
+          <div class="step-vertical-icon">
+            <img [src]="getIcon(currentStep(), $index)" 
+                 [alt]="'Step' + ($index + 1) + 'icon'" 
+                 class="img-fluid"
+                 >
+          </div>
+          
+          <div class="step-vertical-content">
+            <span class="text text-span">{{step.label}}</span>                   
+          </div>   
         </div>
-       <div class="content d-flex flex-column ">
-         <div>
-            <h1 class="text text-heading">Get started</h1>
-        </div>
-        <div class="stepper">
-            <ul class="stepper-list d-flex flex-column ">
-                   @for(step of steps; track $index){
-                     <li class="d-flex aling-items-center gap-4"
-                        [class.active]="$index === currentStep"
-                        (click)="goToStep($index)"
-                     >
-                        <div class="stepper-img">
-                             <img [src]="getICon(currentStep , $index)" alt="StepperIcon" class="img-fluid">
-                        </div>
-                        <span class="text text-span">
-                            {{step.label}}
-                        </span>
-                    </li>
-                   }      
-            </ul>
-        </div>
-       </div>
-</aside> 
+      }
+    </div>
+  </aside>
 
+  <section class="content flex-grow-1 d-flex flex-column justify-content-between">
+    <div class="form-content">
+      @if(currentStep() === 0) {
+        <app-validate></app-validate>
+      } @else if(currentStep() === 1) {
+        <app-about></app-about>
+      } @else if(currentStep() === 2) {
+        <app-company></app-company>
+      } @else if(currentStep() === 3) {
+        <app-team></app-team>
+      }
+    </div>
 
+    <footer class="navigation-buttons d-flex justify-content-between align-items-center">
+      <button 
+        class="btn btn-outline-primary d-flex align-items-center gap-2" 
+        (click)="back()" 
+        [disabled]="currentStep() === 0"
+        aria-label="previous step">
+        <img src="assets/images/icon/rightArrow.svg" alt="BackArrow" aria-hidden="true" class="img-fluid">
+        Previous step
+      </button>
+      <button 
+        class="btn btn-primary d-flex align-items-center gap-2" 
+        (click)="next()" 
+        [disabled]="currentStep() === steps.length - 1"
+        aria-label="next step">
+        Next Step
+        <img src="assets/images/icon/leftArrow.svg" alt="NextArrow" aria-hidden="true" class="img-fluid">
+      </button>
+    </footer>
+  </section>
+</div>

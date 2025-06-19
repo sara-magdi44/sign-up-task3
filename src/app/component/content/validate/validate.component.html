@@ -1,32 +1,53 @@
-<div class="d-flex flex-column align-items-center justify-content-center ">
+<div class="section">
     <div class="step">
         <span>STEP 1/4</span>
         <h2>Valid your phone</h2>
     </div>
-    <div class="validation-content">
-        <form action="post">
-            <div class="mobile-section">
+        <form action="post" class="form d-flex flex-column ">
+            <div class="form-group">
                 <label for="mobile" class="label form-label">Mobile Number</label>
-                <input class="input form-control" type="text" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
-                <input class="input form-control" type="text" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+                <div class="input-group gap-3">
+                    <select class="form-select select country-select" aria-label="Country code select">
+                        <option selected>+1</option>
+                        <option value="1">+20</option>
+                        <option value="2">+30</option>
+                        <option value="3">+44</option>
+                        <option value="4">+86</option>
+                    </select>
+                    <input class="form-control input phone-input" type="tel" id="mobile" name="mobile" placeholder="345-567-23-56" required>
+                </div>
             </div>
-            <div class="sms-section">
-                <label for="sms" class="label form-label">SMS Code</label>
-                <input class="input form-control" type="text" id="sms" name="sms" placeholder="Enter the SMS code" required>
+            <div class="form-group">
+                <label for="otp" class="label form-label">Code from SMS</label>
+                <div class="input-group otp-input text-center  gap-3">
+                    @for(input of otp ; track $index ){
+                        <input class="input  form-control"type="tel" 
+                        (input)="onOtpInput($event, $index)" 
+                        [value]="otp[$index]" 
+                        inputmode="numeric" maxlength="1" id="otp" name="otp" placeholder="" required>
+                    }
+                </div>
             </div>
-            <div class="sms-error">
-                <img src="" alt="">
-                <p class="error-message">Invalid SMS code. Please try again.</p>
+            <div class="form-section sms-error d-flex flex-row gap-3">
+                <img src="assets/images/icon/warning.svg" alt="erorr">
+                <p class="error-message">SMS was sent to your number +1 345 673-56-67
+It will be valid for 01:25</p>
             </div>
-            <div class="email-section">
+            <div class="form-group">
                 <label for="email" class="label form-label">Email Address</label>
-                <input class="input form-control" type="email" id="email" name="email" placeholder="Enter your email address" required>
+                <input class="input form-control" type="email" id="email" name="email" placeholder="youremail@gmail.com" required>
             </div>
-            <div class="password-section">
+            <div class="form-section position-relative">
                 <label for="password" class="label form-label">Create Password</label>
-                <input class="input form-control" type="password" id="password" name="password" placeholder="Create a password" required>
+                <input class="input form-control" 
+                [type]="showPassword ? 'text' : 'password'" 
+                id="password" name="password" 
+                placeholder="••••••••" required>
+               <div class="img-content">
+                 <img src="assets/images/icon/password.svg" alt="passwordicon" (click)="togglePasswordVisibility()"
+                class="showPassword img-fluid">
+               </div>
             </div>
         </form>
-    </div>
     
 </div>

@@ -1,1 +1,52 @@
-<p>team works!</p>
+<div class=" section">
+     <div class="step">
+        <span>STEP 4/4</span>
+        <h2>Valid your phone</h2>
+    </div>
+      <form action="post" class="form d-flex flex-column ">
+        <div class="form-group">
+          <label for="memberemail" class="form-label label">Member’s Email</label>
+        <input type="email" class="form-control input" id="memberemail" aria-describedby="emailHelp" placeholder="memberemail@gmail.com">
+        </div>
+          <div class="add-member">
+                    <button type="button" 
+                            class="btn btn-add-member" 
+                            data-bs-toggle="modal" 
+                            data-bs-target="#modalAddMember">
+                        <div class="img-content">
+                            <img src="assets/images/icon/plus.svg" alt="plusIcon">
+                        </div>
+                        Add another Member
+                    </button>
+                </div>
+        
+      </form>
+    </div>
+    
+ <div class="modal fade" id="modalAddMember" tabindex="-1" role="dialog" aria-labelledby="modalAddMemberLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalAddMemberLabel">Add Member</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="newMemberEmail" class="form-label">Member's Email</label>
+              <input type="email" class="form-control" id="newMemberEmail" placeholder="member@company.com">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Add Member</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+

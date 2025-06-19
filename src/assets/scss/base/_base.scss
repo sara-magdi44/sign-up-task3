@@ -24,16 +24,18 @@ ul {
 body {
   margin: 0;
   padding: 0;
+    transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+
 }
 
-.btn{
-  border: none;
-  outline: none;
-  padding: 0;
- &:active{
-  border-color: none;
- }
-}
 
+.section {
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    .form{
+      gap: 2rem;
+    }
+}
 
  

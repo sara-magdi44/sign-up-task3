@@ -1,32 +1,207 @@
-aside{
-    gap:3.5rem ;
+
+aside {
+    max-width: 600px;
     background-color: var(--primary);
-    max-width:350px ;
-    min-height: 100vh;
-    padding: 3.5rem 2.5rem;
-    border-radius: 1.5rem;
-    .content{
-        gap: 3rem;
-    }
-    .stepper{
-        .stepper-list{
-            gap: 2rem;
-        }
-        .stepper-img{
-            inline-size:25px ;
-            block-size: 25px;
-            position: relative;
-            &::after{
-                content: "";
-                position: absolute;
-                inline-size: 2px;
-                block-size: 26px;
-                border-radius: 1px;
-                background-color: var(--neutral-100);
-                transform: translateX(-13px);
-                bottom: -31px;
-            }
+    padding: 3.5rem 2rem;
+    border-radius: 1.5rem ;
+    gap:2rem;
+      .step-vertical {
+        display: flex;
+        position: relative;
+        padding: 1rem 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        @media (max-width: 991.98px) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0.5rem 0.25rem;
+            flex: 1;
+            max-width: calc(100% / var(--steps-count, 4));
         }
 
+    }
+
+    .step-vertical:not(:last-child)::before {
+        content: "";
+        position: absolute;
+        left: 11px;
+        top: 50px;
+        height: calc(50% - 5px);
+        width: 3px;
+        z-index: 1;
+        border-radius: 8px;
+
+    }
+        .step-vertical-content{
+        padding:0 1rem  ;
+        }    
+         .step-vertical.inactive:not(:last-child)::before {
+       background: var(--neutral-50);
+       }
+       .step-vertical.active:not(:last-child)::before,
+       .step-vertical.complete:not(:last-child)::before
+         {
+           background: var(--neutral-100);
+        }
+     .step-vertical-icon {
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                z-index: 2;
+                margin-bottom: 10px;
+    } 
+} 
+@media (max-width: 991.98px) {
+    aside {
+        max-width: 100vw;
+        min-height: auto;
+        border-radius: 1rem;
+        padding: 1rem ;
+        
+        .stepper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 1rem 0;
+            width: 100%;
+        }
+        .side-content{
+            flex-direction: row;
+            gap: 0.7rem;
+        }
+        .step-vertical{
+        &:not(:last-child)::before {
+                    height: 2px;
+                    top: 19px;
+                    left: 77%;
+                    width: 5rem;
+                }
+                &.inactive:not(:last-child)::before {
+                    background: var(--neutral-50);
+                }
+    
+                &.active:not(:last-child)::before,
+                &.complete:not(:last-child)::before {
+                    background: var(--neutral-100);
+                }
+            }
+        .step-vertical-icon{
+            inline-size: 40px;
+        }
+    }
+}
+
+           
+@media (max-width: 750px) {
+    aside {
+        padding: 12px 0 0 0   !important;
+        width: 100%;
+       max-height: 250px;
+       align-items: center;
+       justify-self: center;
+       gap: 0;   
+        .side-content{
+            gap: 0.5rem;
+            align-items: center;
+            .main-logo{
+                inline-size: 44px;
+            }
+            .text-heading{
+                font-size: 25px;
+            }
+        }
+    
+    }
+     .step-vertical{
+        &:not(:last-child)::before {
+                top: 19px;
+                left: 73%;
+                height: 2px;
+                z-index: 1;
+                width: 6rem;
+                }
+                &.inactive:not(:last-child)::before {
+                    background: var(--neutral-50);
+                }
+    
+                &.active:not(:last-child)::before,
+                &.complete:not(:last-child)::before {
+                    background: var(--neutral-100);
+                }
+            }
+    
+            .text-span{
+                display: none;
+            }
+
+}
+
+
+
+@media (max-width: 425px) {
+    .content-container{
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 19px
+    }
+    aside {
+      width: 100%;
+       max-height: 150px;
+       align-items: center;
+       justify-self: center;
+       padding: 0;
+       gap: 0;
+        .step-vertical {
+            padding: 0.25rem 0.1rem;
+             &:not(:last-child)::before {
+             top: 12px;
+             right: -50%;
+             left: 86%;
+             width: 20px;
+           &.inactive:not(:last-child)::before {
+            background: var(--neutral-50);
+       
+            }
+            &.active:not(:last-child)::before,
+            &.complete:not(:last-child)::before{
+                background: var(--neutral-100);
+            }
+        }
+    }
+        
+        .step-vertical-icon {
+            width: 20px;
+            height: 20px;
+        
+        }
+        .step-vertical-content ,
+        .main-logo,
+        .text{
+            display: none;
+        }
+
+
+    }
+}
+
+.content-container {
+    background-color: var(--neutral-200);
+    min-height: 100vh;
+    padding: 20px;
+    
+    .content {
+        background-color: var(--neutral-100);
+        border-radius: 14px;
+        padding: 1rem;
+        .navigation-buttons{
+            border-top: 1px solid var(--neutral-300);
+            padding: 1rem 0 ;
+        }
     }
 }

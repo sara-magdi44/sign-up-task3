@@ -1,10 +1,1 @@
-<div class="content-container d-flex flex-wrap gap-4 align-items-start">
-    <app-stepper
-      [currentStep]="currentStep()"
-      (stepChange)="onStepChange($event)">
-    </app-stepper>
-
-  <div class="content flex-grow-1">
-    <app-content [step]="currentStep()"></app-content>
-  </div>
-</div>
+    <router-outlet></router-outlet>

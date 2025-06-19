@@ -4,9 +4,75 @@
     border: 1px solid var(--neutral-350);
     font-size: 14px;
     padding: 10px;
+    border-radius: 14px !important;
+    font-family: "NunitoSans-Regular";
+    &::placeholder{
+        color: var(--neutral-400);
+        font-family: "NunitoSans-Regular";
+    }
+    &:focus {
+      color: var(--neutral-500);
+      border: 1px solid var(--primary);
+      box-shadow: none;
+      outline: 0;
+      border-color : var(--primary);
+      box-shadow: 0 0 0 0.2rem var(--neutral-200);
+    }
+    
 }
-.label{
+
+.form-check{
     color: var(--neutral-400);
     font-size: 14px;
     font-family: "NunitoSans-Bold";
+    margin: 0 ;
+    padding: 10px 0;
+      &.radio-check {
+        input {
+            display: none;
+        }
+     }
+    .label-cehckbox{
+       font-size: 16px;
+       font-family: "NunitoSans-Regular";
+       border: 1px solid var(--neutral-350);
+       color: var(--neutral-500);
+       padding: 0.7rem 2rem;
+       border-radius: 8px;
+       position: relative;
+        &:hover ,
+        &:active{
+            border: 1px solid var(--primary);
+             box-shadow: 0 0 0 0.2rem var(--neutral-200);
+        }
+   
+    }
 }
+
+
+.select{
+    padding: 0.7rem;
+    color: var(--neutral-400);
+    border: 1px solid var(--neutral-350);
+    border-radius:14px  !important;
+    font-family: "NunitoSans-Regular";
+       &:focus {
+      color: var(--neutral-500);
+      border: 1px solid var(--primary);
+      box-shadow: none;
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem var(--neutral-200);
+
+    }
+
+}
+
+ input[type="radio"]:checked + .label-cehckbox {
+      color: var(--neutral-500);
+      border: 1px solid var(--primary);
+      box-shadow: none;
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem var(--neutral-200);
+
+
+  }
