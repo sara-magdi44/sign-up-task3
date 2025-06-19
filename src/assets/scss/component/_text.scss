@@ -1,0 +1,32 @@
+.text{
+    color: var(--neutral-100);
+    text-transform: capitalize;
+    &.text-heading{
+        font-size: 36px;
+        font-family: "NunitoSans-Bold";
+    }
+    &.text-span{
+       font-size: clamp(0.875rem, 0.8036rem + 0.3571vw, 1.125rem);
+        font-family: "NunitoSans-SemiBold";
+    }
+    &.text-link{
+        font-size: 16px;
+        font-family: "NunitoSans-SemiBold";
+        color: var(--primary);
+        
+    }
+
+}
+.step{
+    font-family: "NunitoSans-Bold";
+    text-align: center;
+    padding: 1rem 0 ;
+    span{
+        color: var(--primary);
+        font-size: 14px;
+    }
+    h2{
+        color: var(--neutral-500);
+        font-size: 22px;
+    }
+}

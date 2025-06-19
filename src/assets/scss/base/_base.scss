@@ -1,0 +1,41 @@
+p,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: unset !important;
+  padding: 0 !important;
+}
+a {
+  text-decoration: none !important;
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+    transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+
+}
+
+
+.section {
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    .form{
+      gap: 2rem;
+    }
+}
+
+ 

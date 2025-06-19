@@ -1,0 +1,38 @@
+.section{
+    .form-section{
+     .country-select {
+            max-width: 74px;
+        }
+}
+.otp-input{
+    input{
+        max-width:58px;
+        text-align: center;
+    }
+}
+.img-content{
+    inline-size: 25px;
+    block-size: 25px;
+    position: absolute;
+    top: 2.5rem;
+    cursor: pointer;
+    z-index: 1;
+    right: 0.8rem;
+}
+.sms-error{
+        background-color: var(--neutral-200);
+        border-radius: 14px;
+        padding:1rem ;
+        img{
+            inline-size: 25px;
+            block-size: 25px;
+        }
+        .error-message{
+            color:var(--primary);
+            font-family: "NunitoSans-SemiBold";
+            font-size: 14px;
+            max-width: 350px;
+
+        }
+    }
+}
