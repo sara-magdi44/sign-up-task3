@@ -68,8 +68,8 @@
 }
 
  input[type="radio"]:checked + .label-cehckbox {
-      color: var(--neutral-500);
-      border: 1px solid var(--primary);
+      color: var(--neutral-100);
+      background-color: var(--primary);
       box-shadow: none;
       outline: 0;
       box-shadow: 0 0 0 0.2rem var(--neutral-200);

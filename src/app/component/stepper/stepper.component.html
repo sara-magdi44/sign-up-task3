@@ -9,7 +9,7 @@
    </div>
     <div class="stepper d-flex flex-row flex-lg-column ">
       @for(step of steps; track $index) {
-        <div class="step-vertical" [style.--steps-count]="steps.length"
+        <div class="step-vertical"
              [class.complete]="$index < currentStep()"
              [class.active]="$index === currentStep()"
              [class.inactive]="$index > currentStep()"
